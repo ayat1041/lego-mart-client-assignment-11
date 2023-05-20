@@ -3,7 +3,7 @@ const Gallery = () => {
         <div className="gallery_section flex flex-col lg:flex-row container mx-auto my-28 justify-center items-center" id="gallery">
         <div className="w-full lg:w-[50%] p-4">
           <h1 className="text-6xl mb-8">Gallery</h1>
-          <h1 className="text-2xl font-bold text-slate-500">
+          <h1 className="text-2xl font-medium text-slate-500">
             Get exciting Toys for your kids<br></br>and help them grow their creativity
             through the world of Legos!
           </h1>

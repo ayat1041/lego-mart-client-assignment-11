@@ -4,7 +4,7 @@ import ShopByCategory from "./ShopByCategory";
 
 const Home = () => {
   return (
-    <div>
+    <div className="scroll-smooth">
       <Hero></Hero>
         <Gallery></Gallery>
         <ShopByCategory></ShopByCategory>
