@@ -1,9 +1,15 @@
+import Gallery from "./Gallery";
+import Hero from "./Hero";
+import ShopByCategory from "./ShopByCategory";
+
 const Home = () => {
-    return (
-        <div>
-            <h2>Feels like home</h2>
-        </div>
-    );
+  return (
+    <div>
+      <Hero></Hero>
+        <Gallery></Gallery>
+        <ShopByCategory></ShopByCategory>
+    </div>
+  );
 };
 
 export default Home;
