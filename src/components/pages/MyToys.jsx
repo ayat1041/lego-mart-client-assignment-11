@@ -1,12 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import MyTableRow from "../Shared/MyTableRow";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [data, setData] = useState([]);
   const [selectedSort, setSelectedSort] = useState("");
   const [update, setUpdate] = useState("");
+  const notify = () => toast("Successfully Updated :)");
   let toy = {
     _id: "",
     seller: "",
@@ -50,7 +52,7 @@ const MyToys = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        // notify();
+        notify();
       });
     console.log(updatedToy);
   };
@@ -159,6 +161,7 @@ const MyToys = () => {
                   id="price"
                   type="text"
                   placeholder={price}
+                  defaultValue={price}
                   name={price}
                 />
               </div>
@@ -176,6 +179,7 @@ const MyToys = () => {
                   id="rating"
                   type="text"
                   placeholder={rating}
+                  defaultValue={rating}
                   name={rating}
                 />
               </div>
@@ -192,6 +196,7 @@ const MyToys = () => {
                   type="number"
                   placeholder={quantity}
                   name={quantity}
+                  defaultValue={quantity}
                 />
               </div>
             </div>
@@ -248,7 +253,7 @@ const MyToys = () => {
             <div className="flex items-center justify-center">
               <button
                 className="bg-red-600 hover:bg-red-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                type="submit"
+                type="submit" 
               >
                 POST
               </button>
@@ -299,11 +304,25 @@ const MyToys = () => {
                 key={toy._id}
                 toy={toy}
                 handleObjectDataChange={handleObjectDataChange}
+                setData={setData}
+                data={data}
               ></MyTableRow>
             ))}
           </tbody>
         </table>
       </div>
+      <ToastContainer
+          position="top-center"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl={false}
+          pauseOnFocusLoss={false}
+          draggable={false}
+          pauseOnHover={false}
+          theme="light"
+        />
     </div>
   );
 };
