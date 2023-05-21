@@ -6,7 +6,9 @@ const Home = () => {
   return (
     <div className="scroll-smooth">
       <Hero></Hero>
-        <Gallery></Gallery>
+      <div data-aos="fade-right">
+        <Gallery ></Gallery>
+        </div>
         <ShopByCategory></ShopByCategory>
     </div>
   );

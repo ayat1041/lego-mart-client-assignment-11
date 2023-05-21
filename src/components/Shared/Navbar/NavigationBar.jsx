@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const NavigationBar = () => {
+  const {user,logOut} = useContext(AuthContext);
+  console.log(user);
+  const signOut = () =>{
+    logOut()
+    .then(()=>{})
+    .catch(e=>console.log(e))
+  }
   const navOptions = (
     <>
       <li>
@@ -47,7 +56,7 @@ const NavigationBar = () => {
     </>
   );
   return (
-    <div className="navbar sticky top-0 bg-gradient-to-b from-[#313131] via-[#111111] to-[#313131] z-10">
+    <div className="navbar sticky top-0 bg-gradient-to-b from-[#494949] via-[#111111] to-[#494949] z-10">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -83,14 +92,21 @@ const NavigationBar = () => {
         <ul className="menu menu-horizontal px-1">{navOptions}</ul>
       </div>
       <div className="navbar-end">
-        {/* <Link to="/login" className="text-yellow-100 hover:text-yellow-500 text-xl font-medium lg:font-bold me-2 lg:me-4">Login</Link>
-        <img className="w-[40px] rounded-0 border-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnBM3TcLhWOhvYDIjxWgPNnx9rxJU2VAVQUQ&usqp=CAU" alt="" /> */}
-        <Link to="/login" className="text-yellow-100 hover:text-yellow-500 text-xl font-medium lg:font-bold me-2 lg:me-4">Login</Link>
+        {user ? 
+        <>
+        <Link onClick={()=>{
+          signOut();
+        }} className="text-yellow-100 hover:text-yellow-500 text-xl font-medium lg:font-bold me-2 lg:me-4">logout</Link>
         <div className="avatar">
           <div className="w-[60px] mask mask-hexagon">
-            <img className="w-[40px]" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnBM3TcLhWOhvYDIjxWgPNnx9rxJU2VAVQUQ&usqp=CAU" alt=""  />
+            <img className="w-[40px]" src={user.photoURL} alt=""  />
           </div>
         </div>
+        </>
+        :
+        <Link to="/login" className="text-yellow-100 hover:text-yellow-500 text-xl font-medium lg:font-bold me-2 lg:me-4">login</Link>
+        }
+        
       </div>
     </div>
   );

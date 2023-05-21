@@ -5,6 +5,7 @@ const Hero = () => {
       style={{
         backgroundImage: `url("cover.jpg")`,
       }}
+      data-aos="fade-down"
     >
       <div className="hero-overlay"></div>
       <div className="hero-content text-center text-neutral-content">

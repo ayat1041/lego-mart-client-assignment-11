@@ -9,7 +9,7 @@ const ShopByCategory = () => {
     fetch("http://localhost:5000/toys")
       .then((res) => res.json())
       .then((data) => setToys(data));
-  }, []);
+  }, [toys]);
 
   const legoArch = toys.filter(
     (toy) => toy.sub_category === "Lego Architecture"
@@ -26,7 +26,7 @@ const ShopByCategory = () => {
 
   return (
     <div className="container mx-auto my-28">
-      <h1 className="text-5xl mb-10">Shop By Category</h1>
+      <h1 className="text-5xl mb-10" data-aos="fade-left">Shop By Category</h1>
       <Tabs>
         <TabList>
           <Tab>Lego Architecture</Tab>

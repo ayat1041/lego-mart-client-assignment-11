@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 const ToyCard = ({toy}) => {
 
   const {_id,toy_name,img,price,rating} = toy;
-  console.log(img);
   return (
     <div className="card w-96 glass p-5 bg-gradient-to-b from-[#FFFFFF] to-[#FFFFDD] rounded-none">
       <figure>
