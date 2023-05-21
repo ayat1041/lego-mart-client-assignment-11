@@ -55,7 +55,6 @@ const MyToys = () => {
       .then((data) => {
         notify();
       });
-    console.log(updatedToy);
   };
   const [objectData, setObjectData] = useState(toy);
   let {
@@ -96,7 +95,6 @@ const MyToys = () => {
 
   const handleSortChange = (event) => {
     const value = event.target.value;
-    console.log(value);
     setSelectedSort(value);
   };
 
