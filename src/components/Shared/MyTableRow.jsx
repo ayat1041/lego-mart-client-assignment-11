@@ -12,7 +12,7 @@ const MyTableRow = ({toy,handleObjectDataChange,setData,data}) => {
         const confirmDelete = window.confirm("Are you sure you want to delete this item?");
         if (confirmDelete) {
         console.log('deleted',id);
-        fetch(`http://localhost:5000/toys/${id}`,{
+        fetch(`https://lego-mart-server.vercel.app/toys/${id}`,{
             method: "DELETE"
         })
         .then(res=>res.json())

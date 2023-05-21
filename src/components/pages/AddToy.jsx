@@ -33,7 +33,7 @@ const AddToy = () => {
       seller,
       seller_mail,
     };
-    fetch("http://localhost:5000/toys", {
+    fetch("https://lego-mart-server.vercel.app/toys", {
       method: "POST",
       headers: {
         "content-type": "application/json",

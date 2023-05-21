@@ -44,7 +44,7 @@ const MyToys = () => {
       seller,
       seller_mail,
     };
-    fetch(`http://localhost:5000/toys/${id}`, {
+    fetch(`https://lego-mart-server.vercel.app/toys/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -76,7 +76,7 @@ const MyToys = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/toys?email=${user.email}`)
+    fetch(`https://lego-mart-server.vercel.app/toys?email=${user.email}`)
       .then((res) => res.json())
       .then((toys) => {
         setData(toys);
