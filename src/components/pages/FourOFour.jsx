@@ -10,7 +10,7 @@ const FourOFour = () => {
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <TbError404Off className="text-9xl lg:text-[30vw]"/>
-      <p className="text-5xl font-bold">welcome to nowhere</p>
+      <p className="text-5xl font-bold">Welcome To Nowhere</p>
       <Link to=""><button className="btn btn-success my-10 border-none rounded-none shadow-md text-lg">Go home</button></Link>
     </div>
   );
