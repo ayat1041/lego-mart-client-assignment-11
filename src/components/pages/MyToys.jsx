@@ -18,6 +18,42 @@ const MyToys = () => {
     rating: "",
     description: "",
   };
+  const handleUpdateToy = (event,id) => {
+    event.preventDefault();
+    const form = event.target;
+    const toy_name = form.toy_name.value;
+    const photo = form.photo.value;
+    const sub_category = form.category.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const quantity = form.quantity.value;
+    const description = form.description.value;
+    const seller = form.name.value;
+    const seller_mail = form.email.value;
+    const updatedToy = {
+      toy_name,
+      img: photo,
+      sub_category,
+      price,
+      rating,
+      quantity,
+      description,
+      seller,
+      seller_mail
+    };
+    fetch(`http://localhost:5000/toys/${id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedToy),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // notify();
+      });
+    console.log(updatedToy);
+  };
   const [objectData, setObjectData] = useState(toy);
   let {_id,seller,toy_name,sub_category,quantity,img,price,rating,description} = objectData;
 
@@ -58,7 +94,7 @@ const MyToys = () => {
       <input type="checkbox" id="my-modal" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box h-max bg-gradient-to-b from-slate-300 via-slate-100 to-slate-200">
-          <form className="rounded px-8 pt-6 pb-8 mb-4 mx-auto">
+          <form onSubmit={()=>handleUpdateToy(event,_id)} className="rounded px-8 pt-6 pb-8 mb-4 mx-auto">
             <div className="w-full flex gap-6 justify-center">
               <div className="mb-4">
                 <label
@@ -106,6 +142,7 @@ const MyToys = () => {
                   id="category"
                   type="text"
                   placeholder={sub_category}
+                  defaultValue={sub_category}
                   name={sub_category}
                 />
               </div>
@@ -219,7 +256,7 @@ const MyToys = () => {
           </form>
           <div className="modal-action">
             <label htmlFor="my-modal" className="btn">
-              Yay!
+              Not today
             </label>
           </div>
         </div>
