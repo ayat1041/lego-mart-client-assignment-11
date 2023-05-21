@@ -16,14 +16,16 @@ const Login = () => {
     })
     .catch(e=>console.log(e))
   };
-
-  googleSignIn()
-  .then(result=>{
-    console.log(result.user);
-  })
-  .catch(e=> console.log(e))
-
+  const handleGoogleSignIn = () =>{
+    googleSignIn()
+    .then(result=>{
+      console.log(result.user);
+    })
+    .catch(e=> console.log(e))
   
+  }
+
+
   return (
     <div className="min-h-screen mb-12 h-[100%]" data-aos="fade-up">
       <div>
@@ -51,7 +53,7 @@ const Login = () => {
           Login
         </button>
         <p className="w-full text-center">Sign in with google instead ?</p>
-        <FcGoogle onClick={googleSignIn} className="text-3xl my-5" />
+        <FcGoogle onClick={handleGoogleSignIn} className="text-3xl my-5" />
         <p className="w-full text-center">
           New to LegoMart ? <Link to="/signup" className="font-bold">Signup</Link>
         </p>
