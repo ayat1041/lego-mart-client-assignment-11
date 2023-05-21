@@ -109,7 +109,7 @@ const NavigationBar = () => {
             </Link>
             <div className="avatar">
               <div className="w-[60px] mask mask-hexagon">
-                <img className="w-[40px]" src={user.photoURL} alt="" />
+                <img className="w-[40px]" src={user.photoURL} title={user.displayName} alt="" />
               </div>
             </div>
           </>
