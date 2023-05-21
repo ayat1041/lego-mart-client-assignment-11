@@ -3,32 +3,31 @@ import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 const Login = () => {
-    const {signIn,googleSignIn} = useContext(AuthContext);
-    const location = useLocation();
-    const from = location.state?.from?.pathname || '/';
-    const navigate = useNavigate();
+  const { signIn, googleSignIn } = useContext(AuthContext);
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  const navigate = useNavigate();
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email,password);
-    signIn(email,password)
-    .then(result =>{
+    console.log(email, password);
+    signIn(email, password)
+      .then((result) => {
         console.log(result.user);
-        navigate(from, {replace: true});
-    })
-    .catch(e=>console.log(e))
+        navigate(from, { replace: true });
+      })
+      .catch((e) => console.log(e));
   };
-  const handleGoogleSignIn = () =>{
+  const handleGoogleSignIn = () => {
     googleSignIn()
-    .then(result=>{
-      console.log(result.user);
-    })
-    .catch(e=> console.log(e))
-  
-  }
-
+      .then((result) => {
+        console.log(result.user);
+        navigate(from, { replace: true });
+      })
+      .catch((e) => console.log(e));
+  };
 
   return (
     <div className="min-h-screen mb-12 h-[100%]" data-aos="fade-up">
@@ -57,9 +56,14 @@ const Login = () => {
           Login
         </button>
         <p className="w-full text-center">Sign in with google instead ?</p>
-        <FcGoogle onClick={handleGoogleSignIn} className="text-3xl my-5" />
+        <div className="cursor-pointer" onClick={handleGoogleSignIn}>
+          <FcGoogle className="text-3xl my-5" />
+        </div>
         <p className="w-full text-center">
-          New to LegoMart ? <Link to="/signup" className="font-bold">Signup</Link>
+          New to LegoMart ?{" "}
+          <Link to="/signup" className="font-bold">
+            Signup
+          </Link>
         </p>
       </form>
     </div>

@@ -1,34 +1,61 @@
 import { useLoaderData } from "react-router-dom";
 import TableRow from "../Shared/TableRow";
+import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AllToys = () => {
   const data = useLoaderData();
+  const [toys, setToys] = useState(data);
+  
+  const notify = () => toast("Nothing found :(");
+  const handleSearch = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const query = form.query.value;
+    const results = data.filter((toy) =>
+      toy.toy_name.toLowerCase().includes(query.toLowerCase())
+    );
+    if (results.length) {
+      setToys(results);
+    } else {
+      notify();
+      setToys(data);
+    }
+    console.log(query, results);
+  };
   return (
     <div>
-      <div className="w-100 bg-red-600 mx-auto">
-        <div className="input-group w-max bg-yellow-500 mx-auto">
-          <input
-            type="text"
-            placeholder="Search…"
-            className="input input-bordered"
-          />
-          <button className="btn btn-square">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+      <div className="w-100 my-10">
+        <form onSubmit={handleSearch}>
+          <div className="input-group w-max mx-auto">
+            <input
+              type="text"
+              name="query"
+              placeholder="Search toy by name.."
+              className="input input-bordered"
+            />
+            <button
+              type="submit"
+              className="btn btn-square bg-red-600 border-none"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
-          </button>
-        </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </button>
+          </div>
+        </form>
       </div>
       <h1 className="text-3xl lg:text-5xl font-bold text-center my-10">
         All toys in our collection
@@ -43,16 +70,28 @@ const AllToys = () => {
               <th>Category</th>
               <th>Price</th>
               <th>Quantity</th>
-              <th className="max-w-[300px]">Details</th>
+              <th>Details</th>
             </tr>
           </thead>
           <tbody>
-            {data.map((toy) => (
+            {toys?.map((toy) => (
               <TableRow key={toy._id} toy={toy}></TableRow>
             ))}
           </tbody>
         </table>
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable={false}
+        pauseOnHover={false}
+        theme="light"
+      />
     </div>
   );
 };

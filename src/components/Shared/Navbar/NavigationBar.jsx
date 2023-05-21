@@ -89,7 +89,7 @@ const NavigationBar = () => {
         </div>
         <img
           className="w-[120px] lg:w-[200px] border-2"
-          src="logo.png"
+          src="https://github.com/ayat1041/just_for_issues/assets/57280365/d7e26c2a-914f-4774-a68c-5681541fc3fc"
           alt=""
         />
       </div>
