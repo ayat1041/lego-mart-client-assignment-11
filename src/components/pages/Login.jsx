@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { Helmet } from "react-helmet";
 const Login = () => {
   const { signIn, googleSignIn } = useContext(AuthContext);
   const location = useLocation();
@@ -31,6 +32,11 @@ const Login = () => {
 
   return (
     <div className="min-h-screen mb-12 h-[100%]" data-aos="fade-up">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>LegoMart | Login</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <div>
         <h1 className="text-center py-10 text-2xl lg:text-5xl font-bold drop-shadow-md">
           Hey! Welcome back!

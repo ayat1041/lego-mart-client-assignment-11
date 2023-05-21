@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const SignUp = () => {
     const {createUser,updateUser} = useContext(AuthContext);
@@ -28,6 +29,11 @@ const SignUp = () => {
     }
     return (
         <div className="min-h-screen mb-12">
+          <Helmet>
+        <meta charSet="utf-8" />
+        <title>LegoMart | Signup</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <div>
         <h1 className="text-center py-10 text-2xl lg:text-5xl font-bold drop-shadow-md">
           Welcome to the family!

@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { Rating } from '@smastrom/react-rating'
+import { Helmet } from "react-helmet";
 
 import '@smastrom/react-rating/style.css'
 const ToyDetails = () => {
@@ -20,6 +21,11 @@ const ToyDetails = () => {
     <div>
       {/* <h2>Toy name: {toy_name}</h2> */}
       <div className="hero min-h-screen bg-base-200">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>LegoMart | {toy_name}</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
         <div className="hero-content flex-col lg:flex-row">
           <img
             src={img}

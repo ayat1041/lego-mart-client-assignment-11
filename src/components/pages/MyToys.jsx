@@ -3,6 +3,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import MyTableRow from "../Shared/MyTableRow";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [data, setData] = useState([]);
@@ -20,7 +21,7 @@ const MyToys = () => {
     rating: "",
     description: "",
   };
-  const handleUpdateToy = (event,id) => {
+  const handleUpdateToy = (event, id) => {
     event.preventDefault();
     const form = event.target;
     const toy_name = form.toy_name.value;
@@ -41,7 +42,7 @@ const MyToys = () => {
       quantity,
       description,
       seller,
-      seller_mail
+      seller_mail,
     };
     fetch(`http://localhost:5000/toys/${id}`, {
       method: "PUT",
@@ -57,13 +58,23 @@ const MyToys = () => {
     console.log(updatedToy);
   };
   const [objectData, setObjectData] = useState(toy);
-  let {_id,seller,toy_name,sub_category,quantity,img,price,rating,description} = objectData;
+  let {
+    _id,
+    seller,
+    toy_name,
+    sub_category,
+    quantity,
+    img,
+    price,
+    rating,
+    description,
+  } = objectData;
 
   const handleObjectDataChange = (toyData) => {
     // Update the objectData state in the parent component
     setObjectData(toyData);
   };
-  
+
   useEffect(() => {
     fetch(`http://localhost:5000/toys?email=${user.email}`)
       .then((res) => res.json())
@@ -91,12 +102,20 @@ const MyToys = () => {
 
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>LegoMart | My Toys</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       {/* The button to open modal */}
       {/* Put this part before </body> tag */}
       <input type="checkbox" id="my-modal" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box h-max bg-gradient-to-b from-slate-300 via-slate-100 to-slate-200">
-          <form onSubmit={()=>handleUpdateToy(event,_id)} className="rounded px-8 pt-6 pb-8 mb-4 mx-auto">
+          <form
+            onSubmit={() => handleUpdateToy(event, _id)}
+            className="rounded px-8 pt-6 pb-8 mb-4 mx-auto"
+          >
             <div className="w-full flex gap-6 justify-center">
               <div className="mb-4">
                 <label
@@ -253,7 +272,7 @@ const MyToys = () => {
             <div className="flex items-center justify-center">
               <button
                 className="bg-red-600 hover:bg-red-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                type="submit" 
+                type="submit"
               >
                 POST
               </button>
@@ -312,17 +331,17 @@ const MyToys = () => {
         </table>
       </div>
       <ToastContainer
-          position="top-center"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick={false}
-          rtl={false}
-          pauseOnFocusLoss={false}
-          draggable={false}
-          pauseOnHover={false}
-          theme="light"
-        />
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable={false}
+        pauseOnHover={false}
+        theme="light"
+      />
     </div>
   );
 };

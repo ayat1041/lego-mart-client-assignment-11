@@ -2,12 +2,13 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet";
+
 const AddToy = () => {
   const { user } = useContext(AuthContext);
 
   const notify = () => toast("Successfully Posted :)");
-    
-  
+
   const handlePostToy = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -30,7 +31,7 @@ const AddToy = () => {
       quantity,
       description,
       seller,
-      seller_mail
+      seller_mail,
     };
     fetch("http://localhost:5000/toys", {
       method: "POST",
@@ -46,6 +47,11 @@ const AddToy = () => {
   };
   return (
     <div className="mb-20">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>LegoMart | Add a toy</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <div>
         <h1 className="text-3xl lg:text-5xl font-bold text-center my-10">
           Add a toy
@@ -213,17 +219,17 @@ const AddToy = () => {
         </form>
       </div>
       <ToastContainer
-          position="top-center"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick={false}
-          rtl={false}
-          pauseOnFocusLoss={false}
-          draggable={false}
-          pauseOnHover={false}
-          theme="light"
-        />
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable={false}
+        pauseOnHover={false}
+        theme="light"
+      />
     </div>
   );
 };

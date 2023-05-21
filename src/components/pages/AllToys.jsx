@@ -3,11 +3,12 @@ import TableRow from "../Shared/TableRow";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet";
 
 const AllToys = () => {
   const data = useLoaderData();
   const [toys, setToys] = useState(data);
-  
+
   const notify = () => toast("Nothing found :(");
   const handleSearch = (event) => {
     event.preventDefault();
@@ -26,6 +27,11 @@ const AllToys = () => {
   };
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>LegoMart | All toys</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <div className="w-100 my-10">
         <form onSubmit={handleSearch}>
           <div className="input-group w-max mx-auto">
