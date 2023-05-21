@@ -1,9 +1,12 @@
 import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 const Login = () => {
     const {signIn,googleSignIn} = useContext(AuthContext);
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+    const navigate = useNavigate();
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -13,6 +16,7 @@ const Login = () => {
     signIn(email,password)
     .then(result =>{
         console.log(result.user);
+        navigate(from, {replace: true});
     })
     .catch(e=>console.log(e))
   };

@@ -4,13 +4,13 @@ import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const NavigationBar = () => {
-  const {user,logOut} = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   console.log(user);
-  const signOut = () =>{
+  const signOut = () => {
     logOut()
-    .then(()=>{})
-    .catch(e=>console.log(e))
-  }
+      .then(() => {})
+      .catch((e) => console.log(e));
+  };
   const navOptions = (
     <>
       <li>
@@ -29,22 +29,27 @@ const NavigationBar = () => {
           All Toys
         </Link>
       </li>
-      <li>
-        <Link
-          className="text-yellow-100 hover:text-yellow-500 text-xl font-bold"
-          to="/mytoys"
-        >
-          My Toys
-        </Link>
-      </li>
-      <li>
-        <Link
-          className="text-yellow-100 hover:text-yellow-500 text-xl font-bold"
-          to="/addtoy"
-        >
-          Add a toy
-        </Link>
-      </li>
+      {user && (
+        <>
+          <li>
+            <Link
+              className="text-yellow-100 hover:text-yellow-500 text-xl font-bold"
+              to="/mytoys"
+            >
+              My Toys
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="text-yellow-100 hover:text-yellow-500 text-xl font-bold"
+              to="/addtoy"
+            >
+              Add a toy
+            </Link>
+          </li>
+        </>
+      )}
+
       <li>
         <Link
           className="text-yellow-100 hover:text-yellow-500 text-xl font-bold"
@@ -65,7 +70,7 @@ const NavigationBar = () => {
               className="h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor"
+              stroke="#FF5222"
             >
               <path
                 strokeLinecap="round"
@@ -92,21 +97,30 @@ const NavigationBar = () => {
         <ul className="menu menu-horizontal px-1">{navOptions}</ul>
       </div>
       <div className="navbar-end">
-        {user ? 
-        <>
-        <Link onClick={()=>{
-          signOut();
-        }} className="text-yellow-100 hover:text-yellow-500 text-xl font-medium lg:font-bold me-2 lg:me-4">logout</Link>
-        <div className="avatar">
-          <div className="w-[60px] mask mask-hexagon">
-            <img className="w-[40px]" src={user.photoURL} alt=""  />
-          </div>
-        </div>
-        </>
-        :
-        <Link to="/login" className="text-yellow-100 hover:text-yellow-500 text-xl font-medium lg:font-bold me-2 lg:me-4">login</Link>
-        }
-        
+        {user ? (
+          <>
+            <Link
+              onClick={() => {
+                signOut();
+              }}
+              className="text-yellow-100 hover:text-yellow-500 text-xl font-medium lg:font-bold me-2 lg:me-4"
+            >
+              logout
+            </Link>
+            <div className="avatar">
+              <div className="w-[60px] mask mask-hexagon">
+                <img className="w-[40px]" src={user.photoURL} alt="" />
+              </div>
+            </div>
+          </>
+        ) : (
+          <Link
+            to="/login"
+            className="text-yellow-100 hover:text-yellow-500 text-xl font-medium lg:font-bold me-2 lg:me-4"
+          >
+            login
+          </Link>
+        )}
       </div>
     </div>
   );

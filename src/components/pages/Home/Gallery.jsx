@@ -10,7 +10,7 @@ const Gallery = () => {
         </div>
         <div className="container carousel w-full lg:w-[50%]  mx-auto border-4 border-red-200 shadow-xl">
           <div id="slide1" className="carousel-item relative w-full">
-            <img src="gallery_1.jpg" className="w-full" />
+            <img data-aos="flip-left" src="gallery_1.jpg" className="w-full" />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
               <a href="#slide4" className="btn bg-slate-900 rounded-none border-0">
                 ❮

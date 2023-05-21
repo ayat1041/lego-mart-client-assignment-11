@@ -27,7 +27,7 @@ const ShopByCategory = () => {
   return (
     <div className="container mx-auto my-28">
       <h1 className="text-5xl mb-10" data-aos="fade-left">Shop By Category</h1>
-      <Tabs>
+      <Tabs data-aos="fade-right">
         <TabList>
           <Tab>Lego Architecture</Tab>
           <Tab>Lego Cars</Tab>
