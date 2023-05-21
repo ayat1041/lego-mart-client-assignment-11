@@ -16,11 +16,11 @@ const ParentalGuide = () => {
         className="gallery_section flex flex-col lg:flex-row gap-6 container mx-auto lg:px-40 my-28 justify-center items-center"
         id="gallery"
       >
-        <div className="w-full lg:w-[50%] mx-auto border-4 border-red-200 shadow-xl">
-        <img data-aos="zoom-in" className="w-[100%]" src="parents.jpg" alt="" />
+        <div data-aos="zoom-in" className="w-full lg:w-[50%] mx-auto border-4 border-red-200 shadow-xl">
+        <img className="w-[100%]" src="parents.jpg" alt="" />
         </div>
-        <div className="w-full lg:w-[50%]  mx-auto border-4 border-red-200 shadow-xl">
-          <img data-aos="zoom-in" className="w-[100%]" src="parents_real.jpg" alt="" />
+        <div data-aos="zoom-in" className="w-full lg:w-[50%]  mx-auto border-4 border-red-200 shadow-xl">
+          <img className="w-[100%]" src="parents_real.jpg" alt="" />
         </div>
       </div>
     </div>
