@@ -20,6 +20,7 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        setError(false);
         updateUser(name, photo)
           .then(() => {
             console.log("profile updated");
@@ -27,11 +28,12 @@ const SignUp = () => {
           })
           .catch((e) => {
             console.log(e);
+            setError(false);
           });
       })
       .catch((e) => {
         console.log(e)
-        setError(true);
+        setError(false);
       });
   };
   return (
