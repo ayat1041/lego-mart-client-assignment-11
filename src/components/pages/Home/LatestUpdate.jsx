@@ -6,7 +6,7 @@ const LatestUpdate = () => {
           <h1 className="text-2xl font-medium text-slate-500 text-justify">
             Want to stay updated about our latest collections? Click on the button below and The joker will send you all the latest news about LegoMart and also exciting discounts! <br></br><br></br>Don&apos;t worry we notify only twice a month.
           </h1>
-          <button className="btn shadow-md h-full border-none bg-lime-900 mt-10 hover:bg-red-500 transition-all duration-500 ease-out animate-bounce">Newsletter</button>
+          <button className="btn rounded-none shadow-md h-full border-none bg-green-600 mt-10 hover:bg-red-500 transition-all duration-500 ease-out animate-bounce">Newsletter</button>
         </div>
         <div className="w-full lg:w-[50%] mx-8 lg:mx-auto border-4 border-red-200 shadow-xl">
             <img data-aos="flip-right" src="newsletter.png" alt="" />
