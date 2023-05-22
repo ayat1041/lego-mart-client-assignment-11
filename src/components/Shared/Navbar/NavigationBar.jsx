@@ -104,7 +104,7 @@ const NavigationBar = () => {
               onClick={() => {
                 signOut();
               }}
-              className="btn bg-red-600 border-0 px-2 text-white drop-shadow-md hover:text-yellow-500 text-lg font-medium lg:font-bold me-2 lg:me-4"
+              className="btn bg-red-600 rounded-none border-0 px-2 text-white drop-shadow-md hover:text-yellow-500 text-lg me-2 lg:me-4"
             >
               logout
             </Link>
@@ -113,14 +113,14 @@ const NavigationBar = () => {
                 <img className="w-[40px] cursor-pointer" src={user.photoURL} title={user.displayName} alt="" />
               </div>
               {name &&
-              <div className="absolute rounded-lg whitespace-break-spaces font-bold text-white bottom-[-100px] right-0 bg-[#242323c7] px-2 py-0  my-0 text-center" style={{height: "16px!important"}}>{user.displayName}</div>
+              <div className="absolute rounded-lg whitespace-break-spaces text-white bottom-[-100px] right-0 bg-[#242323c7] px-2 py-0  my-0 text-center" style={{height: "16px!important"}}>{user.displayName}</div>
             }
               </div>
           </>
         ) : (
           <Link
             to="/login"
-            className="btn bg-red-500 border-0 p-2 text-yellow-50 drop-shadow-md hover:text-yellow-500 text-lg font-medium lg:font-bold me-2 lg:me-4"
+            className="btn bg-red-600 rounded-none border-0 p-2 text-yellow-50 drop-shadow-md hover:text-yellow-500 text-lg font-medium lg:font-bold me-2 lg:me-4"
           >
             login
           </Link>
