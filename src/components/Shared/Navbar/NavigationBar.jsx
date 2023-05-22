@@ -103,7 +103,7 @@ const NavigationBar = () => {
               onClick={() => {
                 signOut();
               }}
-              className="text-yellow-100 hover:text-yellow-500 text-xl font-medium lg:font-bold me-2 lg:me-4"
+              className="btn bg-red-500 border-0 p-2 text-yellow-50 drop-shadow-md hover:text-yellow-500 text-lg font-medium lg:font-bold me-2 lg:me-4"
             >
               logout
             </Link>
@@ -119,7 +119,7 @@ const NavigationBar = () => {
         ) : (
           <Link
             to="/login"
-            className="text-yellow-100 hover:text-yellow-500 text-xl font-medium lg:font-bold me-2 lg:me-4"
+            className="btn bg-red-500 border-0 p-2 text-yellow-50 drop-shadow-md hover:text-yellow-500 text-lg font-medium lg:font-bold me-2 lg:me-4"
           >
             login
           </Link>

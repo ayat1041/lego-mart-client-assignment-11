@@ -1,15 +1,31 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Login = () => {
   const { signIn, googleSignIn } = useContext(AuthContext);
   const location = useLocation();
+  const [error, setError] = useState(false);
+  const [notifyOnce, setNotifyOnce] = useState(false);
   const from = location.state?.from?.pathname || "/";
+
+  useEffect(() => {
+    if (from != "/") {
+      console.log("not came from other pages");
+      if (!notifyOnce) {
+        toast("You must login first.");
+        setNotifyOnce(true);
+      }
+    }
+  }, [from]);
+
   const navigate = useNavigate();
   const handleLogin = (event) => {
     event.preventDefault();
+    setError(false);
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
@@ -18,8 +34,12 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         navigate(from, { replace: true });
+        setError(false);
       })
-      .catch((e) => console.log(e));
+      .catch((e) => {
+        console.log(e);
+        setError(true);
+      });
   };
   const handleGoogleSignIn = () => {
     googleSignIn()
@@ -31,6 +51,7 @@ const Login = () => {
   };
 
   return (
+    <>
     <div className="min-h-screen mb-12 h-[100%]" data-aos="fade-up">
       <Helmet>
         <meta charSet="utf-8" />
@@ -51,13 +72,20 @@ const Login = () => {
           type="email"
           placeholder="enter your email"
           name="email"
+          required
         />
         <input
           className="my-4 p-4 border-none w-full rounded-sm"
           type="password"
           placeholder="enter your password"
           name="password"
+          required
         />
+        {error && (
+          <p className="text-red-700 font-bold animate-bounce mt-4">
+            Invalid credentials
+          </p>
+        )}
         <button className="btn h-full border-none bg-red-600 text-xl text-white font-bold px-8 my-5 py-4 shadow-lg">
           Login
         </button>
@@ -73,6 +101,19 @@ const Login = () => {
         </p>
       </form>
     </div>
+    <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable={false}
+        pauseOnHover={false}
+        theme="light"
+      />
+    </>
   );
 };
 
