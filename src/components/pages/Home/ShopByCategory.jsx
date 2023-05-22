@@ -25,7 +25,7 @@ const ShopByCategory = () => {
   );
 
   return (
-    <div className="container mx-auto py-20 bg-gradient-to-r from-white via-slate-200 to-white">
+    <div className="container px-8 lg:px-0 mx-auto py-20 bg-gradient-to-r from-white via-slate-200 to-white">
       <h1 className="text-5xl mb-10" data-aos="fade-left">Shop By Category</h1>
       <Tabs data-aos="fade-right">
         <TabList>

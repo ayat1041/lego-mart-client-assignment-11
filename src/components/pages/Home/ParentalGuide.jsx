@@ -21,7 +21,7 @@ const ParentalGuide = () => {
           </h1>
           </div>
       <div
-        className="gallery_section flex flex-col lg:flex-row gap-6 container mx-auto lg:px-40 py-24 justify-center items-center bg-gradient-to-r from-white via-slate-200 to-white"
+        className="gallery_section px-8 flex flex-col lg:flex-row gap-6 container mx-auto lg:px-40 py-24 justify-center items-center bg-gradient-to-r from-white via-slate-200 to-white"
         id="gallery"
       >
         <div className="w-full lg:w-[50%] mx-auto border-4 border-red-200 shadow-xl" data-aos="fade-right">

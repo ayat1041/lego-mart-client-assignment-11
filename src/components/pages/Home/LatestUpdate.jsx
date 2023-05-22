@@ -8,7 +8,7 @@ const LatestUpdate = () => {
           </h1>
           <button className="btn shadow-md h-full border-none bg-lime-900 mt-10 hover:bg-red-500 transition-all duration-500 ease-out animate-bounce">Newsletter</button>
         </div>
-        <div className="w-full lg:w-[50%]  mx-auto border-4 border-red-200 shadow-xl">
+        <div className="w-full lg:w-[50%] mx-8 lg:mx-auto border-4 border-red-200 shadow-xl">
             <img data-aos="flip-right" src="newsletter.png" alt="" />
         </div>
       </div>
