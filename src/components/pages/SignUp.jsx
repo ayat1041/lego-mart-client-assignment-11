@@ -33,7 +33,7 @@ const SignUp = () => {
       })
       .catch((e) => {
         console.log(e)
-        setError(false);
+        setError(true);
       });
   };
   return (
