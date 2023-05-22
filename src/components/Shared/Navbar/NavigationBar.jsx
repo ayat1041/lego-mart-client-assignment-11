@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const NavigationBar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [name,setName] = useState(false);
   const signOut = () => {
     logOut()
       .then(() => {})
@@ -87,7 +88,7 @@ const NavigationBar = () => {
           </ul>
         </div>
         <img
-          className="w-[120px] lg:w-[200px] border-2"
+          className="w-[120px] lg:w-[160px] border-2"
           src="https://github.com/ayat1041/just_for_issues/assets/57280365/d7e26c2a-914f-4774-a68c-5681541fc3fc"
           alt=""
         />
@@ -106,11 +107,14 @@ const NavigationBar = () => {
             >
               logout
             </Link>
-            <div className="avatar">
+            <div onMouseOver={()=>setName(true)} onMouseLeave={() => setName(false)} className="avatar relative">
               <div className="w-[60px] mask mask-hexagon">
                 <img className="w-[40px] cursor-pointer" src={user.photoURL} title={user.displayName} alt="" />
               </div>
-            </div>
+              {name &&
+              <div className="absolute rounded-lg whitespace-break-spaces font-bold text-white bottom-[-100px] right-0 bg-[#242323c7] px-2 py-0  my-0 text-center" style={{height: "16px!important"}}>{user.displayName}</div>
+            }
+              </div>
           </>
         ) : (
           <Link
