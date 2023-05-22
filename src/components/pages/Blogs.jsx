@@ -47,7 +47,7 @@ const Blogs = () => {
           <BsPinAngle className="mb-10 text-3xl cursor-pointer hover:animate-bounce" />
           <p className="font-semibold mb-6">
             <SiSitepoint className="inline mr-3 text-red-600" />
-            What is express js? What is Nest JS (google it)?
+            What is express js? What is Nest JS?
           </p>
           <p className="mb-4 text-slate-600">
             <span className="text-red-500 font-bold">Answer - </span>
@@ -63,7 +63,7 @@ const Blogs = () => {
           <BsPinAngle className="mb-10 text-3xl cursor-pointer hover:animate-bounce" />
           <p className="font-semibold mb-6">
             <SiSitepoint className="inline mr-3 text-red-600" />
-            What is MongoDB aggregate and how does it work (google it)?
+            What is MongoDB aggregate and how does it work?
           </p>
           <p className="mb-4 text-slate-600">
             <span className="text-red-500 font-bold">Answer - </span>

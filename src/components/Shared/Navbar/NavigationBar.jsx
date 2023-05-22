@@ -89,6 +89,7 @@ const NavigationBar = () => {
         </div>
         <img
           className="w-[120px] lg:w-[160px] border-2"
+          style={{filter: "brightness(85%)"}}
           src="https://github.com/ayat1041/just_for_issues/assets/57280365/d7e26c2a-914f-4774-a68c-5681541fc3fc"
           alt=""
         />
@@ -103,7 +104,7 @@ const NavigationBar = () => {
               onClick={() => {
                 signOut();
               }}
-              className="btn bg-red-500 border-0 p-2 text-yellow-50 drop-shadow-md hover:text-yellow-500 text-lg font-medium lg:font-bold me-2 lg:me-4"
+              className="btn bg-red-600 border-0 px-2 text-white drop-shadow-md hover:text-yellow-500 text-lg font-medium lg:font-bold me-2 lg:me-4"
             >
               logout
             </Link>

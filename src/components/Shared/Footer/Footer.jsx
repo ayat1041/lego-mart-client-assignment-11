@@ -47,6 +47,7 @@ const Footer = () => {
       <div>
       <img
           className="w-[100px] lg:w-[120px] border-2"
+          style={{filter: "brightness(85%)"}}
           src="https://github.com/ayat1041/just_for_issues/assets/57280365/d7e26c2a-914f-4774-a68c-5681541fc3fc"
           alt=""
         />
