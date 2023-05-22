@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 
 const Blogs = () => {
   return (
-    <div className="flex flex-col items-center mt-16">
+    <div className="flex flex-col items-center my-16 "  data-aos="zoom-in" >
       <Helmet>
         <meta charSet="utf-8" />
         <title>LegoMart | Blogs</title>
@@ -13,8 +13,8 @@ const Blogs = () => {
       <h2 className="text-4xl pb-10 font-bold">Blogs page</h2>
       <div className="mx-auto flex flex-col lg:flex-row w-full">
         <div className="p-6 m-4 bg-slate-200 shadow-md w-[90vw] lg:w-1/2">
-          <BsPinAngle className="mb-10 text-3xl cursor-pointer" />
-          <p className="font-semibold">
+          <BsPinAngle className="mb-10 text-3xl cursor-pointer hover:animate-bounce" />
+          <p className="font-semibold mb-6">
             <SiSitepoint className="inline mr-3 text-red-600" />
             What is an access token and refresh token? How do they work and
             where should we store them on the client-side?
@@ -30,8 +30,8 @@ const Blogs = () => {
           </p>
         </div>
         <div className="p-6 m-4 bg-slate-200 shadow-md w-[90vw] lg:w-1/2">
-          <BsPinAngle className="mb-10 text-3xl cursor-pointer" />
-          <p className="font-semibold">
+          <BsPinAngle className="mb-10 text-3xl cursor-pointer hover:animate-bounce" />
+          <p className="font-semibold mb-6">
             <SiSitepoint className="inline mr-3 text-red-600" />
             Compare SQL and NoSQL databases?
           </p>
@@ -44,8 +44,8 @@ const Blogs = () => {
           </p>
         </div>
         <div className="p-6 m-4 bg-slate-200 shadow-md w-[90vw] lg:w-1/2">
-          <BsPinAngle className="mb-10 text-3xl cursor-pointer" />
-          <p className="font-semibold">
+          <BsPinAngle className="mb-10 text-3xl cursor-pointer hover:animate-bounce" />
+          <p className="font-semibold mb-6">
             <SiSitepoint className="inline mr-3 text-red-600" />
             What is express js? What is Nest JS (google it)?
           </p>
@@ -60,14 +60,14 @@ const Blogs = () => {
           </p>
         </div>
         <div className="p-6 m-4 bg-slate-200 shadow-md w-[90vw] lg:w-1/2">
-          <BsPinAngle className="mb-10 text-3xl cursor-pointer" />
-          <p className="font-semibold">
+          <BsPinAngle className="mb-10 text-3xl cursor-pointer hover:animate-bounce" />
+          <p className="font-semibold mb-6">
             <SiSitepoint className="inline mr-3 text-red-600" />
             What is MongoDB aggregate and how does it work (google it)?
           </p>
           <p className="mb-4 text-slate-600">
             <span className="text-red-500 font-bold">Answer - </span>
-            MongoDB's aggregate is a powerful data aggregation framework that
+            MongoDB&apos;s aggregate is a powerful data aggregation framework that
             allows users to perform advanced data analysis and transformation
             operations on MongoDB collections. It utilizes a pipeline of stages
             to process and manipulate data, including grouping, filtering,

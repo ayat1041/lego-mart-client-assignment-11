@@ -6,7 +6,6 @@ import { Helmet } from "react-helmet";
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
-
   const notify = () => toast("Successfully Posted :)");
 
   const handlePostToy = (event) => {
@@ -41,6 +40,7 @@ const AddToy = () => {
       body: JSON.stringify(newToy),
     })
       .then((res) => res.json())
+      // eslint-disable-next-line
       .then((data) => {
         notify();
       });
@@ -53,14 +53,14 @@ const AddToy = () => {
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <div>
-        <h1 className="text-3xl lg:text-5xl font-bold text-center my-10">
+        <h1 className="text-3xl lg:text-5xl font-bold text-center my-10" data-aos="fade-up">
           Add a toy
         </h1>
       </div>
-      <div className="w-full max-w-xl mx-auto">
+      <div className="w-full max-w-xl mx-auto" data-aos="slide-left">
         <form
           onSubmit={handlePostToy}
-          className="bg-gradient-to-b from-slate-300 via-slate-100 to-slate-200  shadow-md rounded px-8 pt-6 pb-8 mb-4 mx-auto"
+          className="bg-gradient-to-b from-slate-100 via-slate-200 to-slate-300  shadow-md rounded px-8 pt-6 pb-8 mb-4 mx-auto"
         >
           <div className="w-full flex gap-6 justify-center">
             <div className="mb-4">
@@ -76,6 +76,7 @@ const AddToy = () => {
                 type="text"
                 name="toy_name"
                 placeholder="Enter toy name"
+                required
               />
             </div>
             <div className="mb-4">
@@ -91,6 +92,7 @@ const AddToy = () => {
                 type="text"
                 placeholder="Enter toy photo URL"
                 name="photo"
+                required
               />
             </div>
           </div>
@@ -108,6 +110,7 @@ const AddToy = () => {
                 type="text"
                 placeholder="Enter category"
                 name="category"
+                required
               />
             </div>
 
@@ -122,8 +125,10 @@ const AddToy = () => {
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="price"
                 type="text"
+                pattern="[0-9]+(\.[0-9]+)?"
                 placeholder="Enter price"
                 name="price"
+                required
               />
             </div>
           </div>
@@ -140,7 +145,9 @@ const AddToy = () => {
                 id="rating"
                 type="text"
                 placeholder="Enter rating"
+                pattern="[0-9]+(\.[0-9]+)?"
                 name="rating"
+                required
               />
             </div>
             <div className="mb-4">
@@ -156,6 +163,7 @@ const AddToy = () => {
                 type="number"
                 placeholder="Enter available quantity"
                 name="quantity"
+                required
               />
             </div>
           </div>
@@ -172,6 +180,7 @@ const AddToy = () => {
               placeholder="Enter description"
               rows="4"
               name="description"
+              required
             ></textarea>
           </div>
           <div className="w-full flex gap-6 justify-center">
@@ -189,6 +198,7 @@ const AddToy = () => {
                 placeholder={user?.displayName}
                 defaultValue={user?.displayName}
                 name="name"
+                required
               />
             </div>
             <div className="mb-4">
@@ -205,6 +215,7 @@ const AddToy = () => {
                 placeholder={user?.email}
                 name="email"
                 defaultValue={user?.email}
+                required
               />
             </div>
           </div>

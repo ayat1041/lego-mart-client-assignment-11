@@ -5,7 +5,6 @@ import { AuthContext } from "../../../providers/AuthProvider";
 
 const NavigationBar = () => {
   const { user, logOut } = useContext(AuthContext);
-  console.log(user);
   const signOut = () => {
     logOut()
       .then(() => {})
@@ -18,7 +17,7 @@ const NavigationBar = () => {
           className="text-yellow-100 hover:text-yellow-500 text-2xl font-bold"
           to="/"
         >
-          <FaHome />
+          <FaHome/>
         </Link>
       </li>
       <li>
@@ -109,7 +108,7 @@ const NavigationBar = () => {
             </Link>
             <div className="avatar">
               <div className="w-[60px] mask mask-hexagon">
-                <img className="w-[40px]" src={user.photoURL} title={user.displayName} alt="" />
+                <img className="w-[40px] cursor-pointer" src={user.photoURL} title={user.displayName} alt="" />
               </div>
             </div>
           </>

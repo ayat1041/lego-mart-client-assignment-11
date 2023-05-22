@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import TableRow from "../Shared/TableRow";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Helmet } from "react-helmet";
@@ -8,10 +8,19 @@ import { Helmet } from "react-helmet";
 const AllToys = () => {
   const data = useLoaderData();
   const [toys, setToys] = useState(data);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const notify = () => toast("Nothing found :(");
-  const handleSearch = (event) => {
+  useEffect(()=>{
+    if(data){
+      setIsLoading(false)
+    }
+  },[data])
+
+  const notify = (query) => toast(`${query} is not found`);
+  const handleSearch = async(event) => {
     event.preventDefault();
+
+    setIsLoading(true);
     const form = event.target;
     const query = form.query.value;
     const results = data.filter((toy) =>
@@ -20,10 +29,12 @@ const AllToys = () => {
     if (results.length) {
       setToys(results);
     } else {
-      notify();
+      notify(query);
       setToys(data);
     }
     console.log(query, results);
+
+    setIsLoading(false);
   };
   return (
     <div>
@@ -33,7 +44,7 @@ const AllToys = () => {
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <div className="w-100 my-10">
-        <form onSubmit={handleSearch}>
+        <form onSubmit={handleSearch}  data-aos="fade-right">
           <div className="input-group w-max mx-auto">
             <input
               type="text"
@@ -63,10 +74,10 @@ const AllToys = () => {
           </div>
         </form>
       </div>
-      <h1 className="text-3xl lg:text-5xl font-bold text-center my-10">
+      <h1 className="text-3xl lg:text-5xl font-bold text-center my-10" data-aos="fade-left">
         All toys in our collection
       </h1>
-      <div className="overflow-x-auto my-10 -z-10 container mx-auto">
+      <div className="overflow-x-auto my-10 -z-10 container mx-auto"  data-aos="fade-up">
         <table className="table table-zebra mx-auto">
           {/* head */}
           <thead>
@@ -80,9 +91,12 @@ const AllToys = () => {
             </tr>
           </thead>
           <tbody>
-            {toys?.map((toy) => (
-              <TableRow key={toy._id} toy={toy}></TableRow>
-            ))}
+            {isLoading ? (
+              <h1 className="text-9xl">Please wait</h1>
+            ):(
+              toys?.map((toy) => (
+              <TableRow key={toy._id} toy={toy}></TableRow>)
+              ))}
           </tbody>
         </table>
       </div>

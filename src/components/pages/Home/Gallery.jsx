@@ -1,6 +1,6 @@
 const Gallery = () => {
     return (
-        <div className="gallery_section flex flex-col lg:flex-row container mx-auto my-28 justify-center items-center" id="gallery">
+        <div className="gallery_section flex flex-col lg:flex-row container mx-auto lg:px-28 my-28 justify-center items-center" id="gallery">
         <div className="w-full lg:w-[50%] p-4">
           <h1 className="text-6xl mb-8">Gallery</h1>
           <h1 className="text-2xl font-medium text-slate-500">

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import MyTableRow from "../Shared/MyTableRow";
@@ -27,9 +28,9 @@ const MyToys = () => {
     const toy_name = form.toy_name.value;
     const photo = form.photo.value;
     const sub_category = form.category.value;
-    const price = form.price.value;
-    const rating = form.rating.value;
-    const quantity = form.quantity.value;
+    const price = parseFloat(form.price.value);
+    const rating = parseFloat(form.rating.value);
+    const quantity = parseInt(form.quantity.value);
     const description = form.description.value;
     const seller = form.name.value;
     const seller_mail = form.email.value;
@@ -90,7 +91,6 @@ const MyToys = () => {
   }, [selectedSort, user.email]);
 
   useEffect(() => {
-    console.log(objectData);
   }, [objectData]);
 
   const handleSortChange = (event) => {
@@ -99,7 +99,7 @@ const MyToys = () => {
   };
 
   return (
-    <div>
+    <div data-aos="fade-right">
       <Helmet>
         <meta charSet="utf-8" />
         <title>LegoMart | My Toys</title>
@@ -129,6 +129,7 @@ const MyToys = () => {
                   name="toy_name"
                   placeholder={toy_name}
                   defaultValue={toy_name}
+                  required
                 />
               </div>
               <div className="mb-4">
@@ -145,6 +146,7 @@ const MyToys = () => {
                   placeholder={img}
                   defaultValue={img}
                   name="photo"
+                  required
                 />
               </div>
             </div>
@@ -163,6 +165,7 @@ const MyToys = () => {
                   placeholder={sub_category}
                   defaultValue={sub_category}
                   name={sub_category}
+                  required
                 />
               </div>
 
@@ -179,7 +182,9 @@ const MyToys = () => {
                   type="text"
                   placeholder={price}
                   defaultValue={price}
+                  pattern="[0-9]+(\.[0-9]+)?"
                   name={price}
+                  required
                 />
               </div>
             </div>
@@ -197,7 +202,9 @@ const MyToys = () => {
                   type="text"
                   placeholder={rating}
                   defaultValue={rating}
+                  pattern="[0-9]+(\.[0-9]+)?"
                   name={rating}
+                  required
                 />
               </div>
               <div className="mb-4">
@@ -214,6 +221,7 @@ const MyToys = () => {
                   placeholder={quantity}
                   name={quantity}
                   defaultValue={quantity}
+                  required
                 />
               </div>
             </div>
@@ -231,6 +239,7 @@ const MyToys = () => {
                 defaultValue={description}
                 rows="4"
                 name="description"
+                required
               ></textarea>
             </div>
             <div className="w-full flex gap-6 justify-center">
@@ -248,6 +257,7 @@ const MyToys = () => {
                   placeholder={user?.displayName}
                   defaultValue={user?.displayName}
                   name="name"
+                  required
                 />
               </div>
               <div className="mb-4">
@@ -264,6 +274,7 @@ const MyToys = () => {
                   placeholder={user?.email}
                   name="email"
                   defaultValue={user?.email}
+                  required
                 />
               </div>
             </div>
@@ -300,7 +311,7 @@ const MyToys = () => {
         </select>
       </div>
       <div className="overflow-x-auto my-10 -z-20 container mx-auto">
-        <table className="table table-zebra mx-auto">
+        <table className="table table-zebra mx-auto"  data-aos="zoom-in">
           {/* head */}
           <thead>
             <tr>
@@ -323,7 +334,7 @@ const MyToys = () => {
                 handleObjectDataChange={handleObjectDataChange}
                 setData={setData}
                 data={data}
-              ></MyTableRow>
+              />
             ))}
           </tbody>
         </table>
