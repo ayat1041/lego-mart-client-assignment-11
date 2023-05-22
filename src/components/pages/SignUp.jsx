@@ -37,7 +37,7 @@ const SignUp = () => {
       });
   };
   return (
-    <div className="min-h-screen mb-12">
+    <div className="min-h-screen pb-12 bg-gradient-to-b from-white via-slate-200 to-white">
       <Helmet>
         <meta charSet="utf-8" />
         <title>LegoMart | Signup</title>
@@ -50,31 +50,31 @@ const SignUp = () => {
       </div>
       <form
         onSubmit={handleSignUp}
-        className="p-5 lg:p-10 lg:w-1/2 flex flex-col justify-center items-center mx-auto bg-gradient-to-b from-slate-300 via-slate-100 to-slate-200 shadow-md"
+        className="border-4 border-slate-300 p-5 lg:p-10 lg:w-1/2 flex flex-col justify-center items-center mx-auto bg-gradient-to-b from-slate-300 via-slate-100 to-slate-200 shadow-md"
       >
         <input
-          className="my-4 p-4 border-none w-full rounded-sm"
+          className="my-4 p-4 border-none w-full rounded-sm hover:p-8 hover:text-xl transition-all duration-300 ease-out"
           type="name"
           placeholder="enter your name"
           name="name"
           required
         />
         <input
-          className="my-4 p-4 border-none w-full rounded-sm"
+          className="my-4 p-4 border-none w-full rounded-sm hover:p-8 hover:text-xl transition-all duration-300 ease-out"
           type="email"
           placeholder="enter your email"
           name="email"
           required
         />
         <input
-          className="my-4 p-4 border-none w-full rounded-sm"
+          className="my-4 p-4 border-none w-full rounded-sm hover:p-8 hover:text-xl transition-all duration-300 ease-out"
           type="password"
           placeholder="enter your password"
           name="password"
           required
         />
         <input
-          className="my-4 p-4 border-none w-full rounded-sm"
+          className="my-4 p-4 border-none w-full rounded-sm hover:p-8 hover:text-xl transition-all duration-300 ease-out"
           type="text"
           placeholder="paste your photo url"
           name="photo"
@@ -85,12 +85,12 @@ const SignUp = () => {
             Invalid inputs - email might be already in use.<br></br>also the password must be minimum of 8 characters
           </p>
         )}
-        <button className="btn h-full border-none bg-red-600 text-xl text-white font-bold px-8 my-5 py-4 shadow-lg">
+        <button className="btn transition-all duration-300 ease-out h-full border-none bg-red-600 text-xl hover:text-3xl  text-white font-bold px-8 my-5 py-4 shadow-lg">
           SignUp
         </button>
         <p className="w-full text-center">
           Already have an account ?{" "}
-          <Link to="/login" className="font-bold">
+          <Link to="/login" className="font-bold hover:text-xl hover:text-green-700 transition-all duration-300 ease-out">
             Login
           </Link>
         </p>

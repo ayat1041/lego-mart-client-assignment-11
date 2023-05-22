@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer data-aos="slide-up" className="footer footer-center p-10 text-white rounded  bg-gradient-to-b from-[#313131] via-[#111111] to-[#313131] text-base-content">
+    <footer className="footer footer-center p-10 text-white rounded  bg-gradient-to-b from-[#313131] via-[#111111] to-[#313131]">
       <div className="grid grid-flow-col gap-4">
         <a className="link link-hover">About us</a>
         <a className="link link-hover">Contact</a>

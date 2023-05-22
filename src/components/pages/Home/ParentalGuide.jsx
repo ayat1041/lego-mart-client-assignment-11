@@ -3,8 +3,8 @@ import { RiEyeCloseFill } from "react-icons/ri";
 const ParentalGuide = () => {
   const [note, removeNote] = useState(false);
   return (
-    <div>
-        <div className="flex flex-col container lg:px-28 mx-auto py-20 mt-48 justify-center items-center bg-gradient-to-tr from-white via-slate-50 to-white" data-aos="fade-down">
+    <div className="">
+        <div className="flex flex-col container px-6 lg:px-28 mx-auto py-20 justify-center items-center bg-gradient-to-r from-white via-slate-200 to-white" data-aos="fade-down">
         <h1 className="text-5xl mb-8">Parental Guide</h1>
           <h1 className="text-2xl font-medium text-slate-500 text-justify drop-shadow-sm">
             Unlocking Your Child&apos;s Potential Through LEGO: A Parent&apos;s Guide.
@@ -21,7 +21,7 @@ const ParentalGuide = () => {
           </h1>
           </div>
       <div
-        className="gallery_section flex flex-col lg:flex-row gap-6 container mx-auto lg:px-40 my-28 justify-center items-center"
+        className="gallery_section flex flex-col lg:flex-row gap-6 container mx-auto lg:px-40 py-24 justify-center items-center bg-gradient-to-r from-white via-slate-200 to-white"
         id="gallery"
       >
         <div className="w-full lg:w-[50%] mx-auto border-4 border-red-200 shadow-xl" data-aos="fade-right">

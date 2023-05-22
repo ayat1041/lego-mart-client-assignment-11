@@ -25,14 +25,14 @@ const ShopByCategory = () => {
   );
 
   return (
-    <div className="container mx-auto my-28">
+    <div className="container mx-auto py-20 bg-gradient-to-r from-white via-slate-200 to-white">
       <h1 className="text-5xl mb-10" data-aos="fade-left">Shop By Category</h1>
       <Tabs data-aos="fade-right">
         <TabList>
-          <Tab>Lego Architecture</Tab>
-          <Tab>Lego Cars</Tab>
-          <Tab>Lego City</Tab>
-          <Tab>Lego Superheroes</Tab>
+          <Tab><h1 className="lg:text-xl hover:lg:text-slate-600 p-4 font-semibold transition-all duration-500 ease-out">Lego Architecture</h1></Tab>
+          <Tab><h1 className="lg:text-xl hover:lg:text-slate-600 p-4 font-semibold transition-all duration-500 ease-out">Lego Cars</h1></Tab>
+          <Tab><h1 className="lg:text-xl hover:lg:text-slate-600 p-4 font-semibold transition-all duration-500 ease-out">Lego City</h1></Tab>
+          <Tab><h1 className="lg:text-xl hover:lg:text-slate-600 p-4 font-semibold transition-all duration-500 ease-out">Lego Superheroes</h1></Tab>
         </TabList>
 
         <TabPanel>

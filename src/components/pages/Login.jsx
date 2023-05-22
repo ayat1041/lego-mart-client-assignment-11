@@ -52,7 +52,7 @@ const Login = () => {
 
   return (
     <>
-    <div className="min-h-screen mb-12 h-[100%]" data-aos="fade-up">
+    <div className="min-h-screen pb-12 h-[100%] bg-gradient-to-b from-white via-slate-200 to-white" data-aos="fade-up">
       <Helmet>
         <meta charSet="utf-8" />
         <title>LegoMart | Login</title>
@@ -65,17 +65,17 @@ const Login = () => {
       </div>
       <form
         onSubmit={handleLogin}
-        className="p-5 lg:p-10 lg:w-1/2 flex flex-col justify-center items-center mx-auto bg-gradient-to-b from-slate-300 via-slate-100 to-slate-200 shadow-md"
+        className="border-4 border-slate-300 p-5 lg:p-10 lg:w-1/2 flex flex-col justify-center items-center mx-auto bg-gradient-to-b from-slate-300 via-slate-100 to-slate-200 shadow-md"
       >
         <input
-          className="my-4 p-4 border-none w-full rounded-sm"
+          className="my-4 p-4 border-none w-full rounded-sm hover:p-8 hover:text-xl transition-all duration-300 ease-out"
           type="email"
           placeholder="enter your email"
           name="email"
           required
         />
         <input
-          className="my-4 p-4 border-none w-full rounded-sm"
+          className="my-4 p-4 border-none w-full rounded-sm hover:p-8 hover:text-xl transition-all duration-300 ease-out"
           type="password"
           placeholder="enter your password"
           name="password"
@@ -86,16 +86,16 @@ const Login = () => {
             Invalid credentials
           </p>
         )}
-        <button className="btn h-full border-none bg-red-600 text-xl text-white font-bold px-8 my-5 py-4 shadow-lg">
+        <button className="btn transition-all duration-300 ease-out h-full border-none bg-red-600 text-xl hover:text-3xl  text-white font-bold px-8 my-5 py-4 shadow-lg">
           Login
         </button>
         <p className="w-full text-center">Sign in with google instead ?</p>
         <div className="cursor-pointer" onClick={handleGoogleSignIn}>
-          <FcGoogle className="text-3xl my-5" />
+          <FcGoogle className="text-3xl hover:text-6xl my-5  transition-all duration-300 ease-out" />
         </div>
         <p className="w-full text-center">
           New to LegoMart ?{" "}
-          <Link to="/signup" className="font-bold">
+          <Link to="/signup" className="font-bold hover:text-xl hover:text-green-700 transition-all duration-300 ease-out">
             Signup
           </Link>
         </p>

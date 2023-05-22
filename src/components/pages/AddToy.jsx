@@ -46,21 +46,21 @@ const AddToy = () => {
       });
   };
   return (
-    <div className="mb-20">
+    <div className="pb-20 bg-gradient-to-r from-white via-slate-200 to-white">
       <Helmet>
         <meta charSet="utf-8" />
         <title>LegoMart | Add a toy</title>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <div>
-        <h1 className="text-3xl lg:text-5xl font-bold text-center my-10" data-aos="fade-up">
+        <h1 className="text-3xl lg:text-5xl font-bold text-center py-10" data-aos="fade-up">
           Add a toy
         </h1>
       </div>
       <div className="w-full max-w-xl mx-auto" data-aos="slide-left">
         <form
           onSubmit={handlePostToy}
-          className="bg-gradient-to-b from-slate-100 via-slate-200 to-slate-300  shadow-md rounded px-8 pt-6 pb-8 mb-4 mx-auto"
+          className="border-4 border-slate-300 bg-gradient-to-b from-slate-100 via-slate-200 to-slate-300  shadow-lg rounded px-8 pt-6 pb-8 mb-4 mx-auto"
         >
           <div className="w-full flex gap-6 justify-center">
             <div className="mb-4">
@@ -221,7 +221,7 @@ const AddToy = () => {
           </div>
           <div className="flex items-center justify-center">
             <button
-              className="bg-red-600 hover:bg-red-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="btn transition-all duration-300 ease-out h-full border-none bg-red-600 text-xl hover:text-3xl  text-white font-bold px-8 my-5 py-4 shadow-lg"
               type="submit"
             >
               POST

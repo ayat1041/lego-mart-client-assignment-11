@@ -37,7 +37,7 @@ const AllToys = () => {
     setIsLoading(false);
   };
   return (
-    <div>
+    <div className="bg-gradient-to-b from-white via-slate-200 to-white">
       <Helmet>
         <meta charSet="utf-8" />
         <title>LegoMart | All toys</title>
@@ -54,7 +54,7 @@ const AllToys = () => {
             />
             <button
               type="submit"
-              className="btn btn-square bg-red-600 border-none"
+              className="btn btn-square bg-red-600 border-none hover:bg-red-900 transition-all duration-300 ease-out"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -74,20 +74,20 @@ const AllToys = () => {
           </div>
         </form>
       </div>
-      <h1 className="text-3xl lg:text-5xl font-bold text-center my-10" data-aos="fade-left">
+      <h1 className="text-3xl lg:text-5xl font-bold text-center py-4" data-aos="fade-left">
         All toys in our collection
       </h1>
       <div className="overflow-x-auto my-10 -z-10 container mx-auto"  data-aos="fade-up">
-        <table className="table table-zebra mx-auto">
+        <table className="table table-zebra mx-auto border-4 border-red-100 shadow-lg">
           {/* head */}
           <thead>
             <tr>
-              <th style={{ zIndex: "-30" }}>Seller</th>
-              <th>Toy Name</th>
-              <th>Category</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Details</th>
+              <th className="bg-red-700 text-white text-base">Seller</th>
+              <th className="bg-red-700 text-white text-base">Toy Name</th>
+              <th className="bg-red-700 text-white text-base">Category</th>
+              <th className="bg-red-700 text-white text-base">Price</th>
+              <th className="bg-red-700 text-white text-base">Quantity</th>
+              <th className="bg-red-700 text-white text-base">Details</th>
             </tr>
           </thead>
           <tbody>

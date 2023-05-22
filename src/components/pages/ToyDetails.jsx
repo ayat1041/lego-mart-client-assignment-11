@@ -22,7 +22,7 @@ const ToyDetails = () => {
   return (
     <div>
       {/* <h2>Toy name: {toy_name}</h2> */}
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero min-h-screen bg-gradient-to-b from-white via-slate-200 to-white">
       <Helmet>
         <meta charSet="utf-8" />
         <title>LegoMart | {toy_name}</title>
@@ -31,7 +31,7 @@ const ToyDetails = () => {
         <div className="hero-content flex-col lg:flex-row">
           <img
             src={img}
-            className="lg:w-1/3 rounded-lg shadow-xl border-4 border-yellow-200"
+            className="cursor-magnify lg:w-1/3 hover:lg:w-1/2 transition-all ease-out duration-300 rounded-lg shadow-xl border-4 border-yellow-200"
           />
           <div className="lg:pl-8">
             <h1 className="text-2xl lg:text-3xl font-bold mb-5 text-yellow-500 drop-shadow-sm">{toy_name}</h1>
@@ -56,7 +56,7 @@ const ToyDetails = () => {
               <span className="font-bold text-xl text-black">Price - </span>
               $ {price}
             </p>
-            <button className="btn border-none bg-red-600 hover:bg-green-700 transition-all duration-500 ease-in-out">Add to cart</button>
+            <button className="btn transition-all duration-300 ease-out h-full border-none bg-green-700 hover:bg-green-600 text-sm hover:text-lg  text-white font-bold px-4 my-5 py-2 shadow-lg">Add to cart</button>
           </div>
         </div>
       </div>

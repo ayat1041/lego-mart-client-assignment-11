@@ -15,7 +15,7 @@ const NavigationBar = () => {
     <>
       <li>
         <Link
-          className="text-yellow-100 hover:text-yellow-500 text-2xl font-bold"
+          className="text-yellow-100 hover:text-yellow-500 text-2xl font-bold transition-all duration-300 ease-out"
           to="/"
         >
           <FaHome/>
@@ -23,7 +23,7 @@ const NavigationBar = () => {
       </li>
       <li>
         <Link
-          className="text-yellow-100 hover:text-yellow-500 text-xl font-bold"
+          className="text-yellow-100 hover:text-yellow-500 text-xl font-bold transition-all duration-300 ease-out"
           to="/alltoys"
         >
           All Toys
@@ -33,7 +33,7 @@ const NavigationBar = () => {
         <>
           <li>
             <Link
-              className="text-yellow-100 hover:text-yellow-500 text-xl font-bold"
+              className="text-yellow-100 hover:text-yellow-500 text-xl font-bold transition-all duration-300 ease-out"
               to="/mytoys"
             >
               My Toys
@@ -41,7 +41,7 @@ const NavigationBar = () => {
           </li>
           <li>
             <Link
-              className="text-yellow-100 hover:text-yellow-500 text-xl font-bold"
+              className="text-yellow-100 hover:text-yellow-500 text-xl font-bold transition-all duration-300 ease-out"
               to="/addtoy"
             >
               Add a toy
@@ -52,7 +52,7 @@ const NavigationBar = () => {
 
       <li>
         <Link
-          className="text-yellow-100 hover:text-yellow-500 text-xl font-bold"
+          className="text-yellow-100 hover:text-yellow-500 text-xl font-bold transition-all duration-300 ease-out"
           to="/blogs"
         >
           Blogs
@@ -61,7 +61,7 @@ const NavigationBar = () => {
     </>
   );
   return (
-    <div className="navbar sticky top-0 bg-gradient-to-b from-[#494949] via-[#111111] to-[#494949] z-10">
+    <div className="navbar sticky top-0 bg-gradient-to-b from-[#494949] via-[#111111] to-[#494949] z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

@@ -1,6 +1,6 @@
 const Gallery = () => {
     return (
-        <div className="gallery_section flex flex-col lg:flex-row container mx-auto lg:px-28 my-28 justify-center items-center" id="gallery">
+        <div className="gallery_section flex flex-col lg:flex-row container mx-auto lg:px-28 py-20 justify-center items-center bg-gradient-to-r from-white via-slate-200 to-white" id="gallery">
         <div className="w-full lg:w-[50%] p-4">
           <h1 className="text-6xl mb-8">Gallery</h1>
           <h1 className="text-2xl font-medium text-slate-500">
@@ -12,10 +12,10 @@ const Gallery = () => {
           <div id="slide1" className="carousel-item relative w-full">
             <img data-aos="flip-left" src="gallery_1.jpg" className="w-full" />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide4" className="btn bg-slate-900 rounded-none border-0">
+              <a href="#slide4" className="btn bg-slate-600 shadow-md rounded-full border-0">
                 ❮
               </a>
-              <a href="#slide2" className="btn bg-slate-900 rounded-none border-0">
+              <a href="#slide2" className="btn bg-slate-600 shadow-md rounded-full border-0">
                 ❯
               </a>
             </div>
@@ -26,10 +26,10 @@ const Gallery = () => {
               className="w-full"
             />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide1" className="btn bg-slate-900 rounded-none border-0">
+              <a href="#slide1" className="btn bg-slate-600 shadow-md rounded-full border-0">
                 ❮
               </a>
-              <a href="#slide3" className="btn bg-slate-900 rounded-none border-0">
+              <a href="#slide3" className="btn bg-slate-600 shadow-md rounded-full border-0">
                 ❯
               </a>
             </div>
@@ -40,10 +40,10 @@ const Gallery = () => {
               className="w-full"
             />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide2" className="btn bg-slate-900 rounded-none border-0">
+              <a href="#slide2" className="btn bg-slate-600 shadow-md rounded-full border-0">
                 ❮
               </a>
-              <a href="#slide4" className="btn bg-slate-900 rounded-none border-0">
+              <a href="#slide4" className="btn bg-slate-600 shadow-md rounded-full border-0">
                 ❯
               </a>
             </div>
@@ -54,10 +54,10 @@ const Gallery = () => {
               className="w-full"
             />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide3" className="btn bg-slate-900 rounded-none border-0">
+              <a href="#slide3" className="btn bg-slate-600 shadow-md rounded-full border-0">
                 ❮
               </a>
-              <a href="#slide1" className="btn bg-slate-900 rounded-none border-0">
+              <a href="#slide1" className="btn bg-slate-600 shadow-md rounded-full border-0">
                 ❯
               </a>
             </div>

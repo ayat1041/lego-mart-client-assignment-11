@@ -9,9 +9,9 @@ const FourOFour = () => {
         <title>LegoMart | Error</title>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
-      <TbError404Off className="text-9xl lg:text-[30vw]"/>
+      <TbError404Off className="text-9xl lg:text-[30vw] animate-pulse"/>
       <p className="text-5xl font-bold">Welcome To Nowhere</p>
-      <Link to=""><button className="btn btn-success my-10 border-none rounded-none shadow-md text-lg">Go home</button></Link>
+      <Link to=""><button className="btn btn-success my-10 border-none rounded-none shadow-md text-lg hover:text-3xl transition-all duration-300 ease-out">Go home</button></Link>
     </div>
   );
 };

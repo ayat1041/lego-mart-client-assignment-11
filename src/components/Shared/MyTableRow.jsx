@@ -22,7 +22,7 @@ const MyTableRow = ({toy,handleObjectDataChange,setData,data}) => {
     }
   return (
     <>
-    <tr>
+    <tr className="border-4 border-red-50 shadow-lg">
       <td className="max-w-[120px] whitespace-normal">{toy_name}</td>
       <td><img className="max-w-[60px]" src={img} alt="" /></td>
       <td className="whitespace-normal">{sub_category}</td>

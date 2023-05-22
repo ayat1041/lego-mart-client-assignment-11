@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 
 const Blogs = () => {
   return (
-    <div className="flex flex-col items-center my-16 "  data-aos="zoom-in" >
+    <div className="flex flex-col items-center my-16 bg-gradient-to-b from-white via-slate-300 to-white"  data-aos="zoom-in" >
       <Helmet>
         <meta charSet="utf-8" />
         <title>LegoMart | Blogs</title>

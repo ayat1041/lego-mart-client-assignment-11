@@ -99,7 +99,7 @@ const MyToys = () => {
   };
 
   return (
-    <div data-aos="fade-right">
+    <div data-aos="fade-right" className="bg-gradient-to-b from-white via-slate-200 to-white">
       <Helmet>
         <meta charSet="utf-8" />
         <title>LegoMart | My Toys</title>
@@ -301,7 +301,7 @@ const MyToys = () => {
       <div className="w-full text-center">
         <select
           onChange={handleSortChange}
-          className="select select-bordered w-full max-w-xs"
+          className="select select-bordered w-full max-w-xs border-4 border-red-50 shadow-md"
         >
           <option disabled selected>
             SORT
@@ -311,19 +311,19 @@ const MyToys = () => {
         </select>
       </div>
       <div className="overflow-x-auto my-10 -z-20 container mx-auto">
-        <table className="table table-zebra mx-auto"  data-aos="zoom-in">
+        <table className="table table-zebra mx-auto border-4 border-red-100 shadow-lg"  data-aos="zoom-in">
           {/* head */}
           <thead>
             <tr>
-              <th style={{ zIndex: "-11" }}>Title</th>
-              <th>Photo</th>
-              <th>Category</th>
-              <th>Rating</th>
-              <th style={{ zIndex: "-30" }}>Price</th>
-              <th>Available quantity</th>
-              <th>Details</th>
-              <th>Remove</th>
-              <th>Update</th>
+              <th className="bg-red-700 text-white text-base" style={{ zIndex: "-11" }}>Title</th>
+              <th className="bg-red-700 text-white text-base">Photo</th>
+              <th className="bg-red-700 text-white text-base">Category</th>
+              <th className="bg-red-700 text-white text-base">Rating</th>
+              <th className="bg-red-700 text-white text-base" style={{ zIndex: "-30" }}>Price</th>
+              <th className="bg-red-700 text-white text-base">Available quantity</th>
+              <th className="bg-red-700 text-white text-base">Details</th>
+              <th className="bg-red-700 text-white text-base">Remove</th>
+              <th className="bg-red-700 text-white text-base">Update</th>
             </tr>
           </thead>
           <tbody>

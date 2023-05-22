@@ -13,3 +13,6 @@ body{
 .cursor-pointer{
     cursor: pointer;
 }
+.cursor-magnify{
+    cursor: zoom-in;
+}
